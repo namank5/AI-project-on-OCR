@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+	 <div class="container">
+        <div class="container border border-info m-2 shadow-none p-3 mb-5 bg-light rounded" id="edit">
+            <div class="row m-2 align-items-center">
+                <div class="col align-self-center">
+                    <button onclick="anticlock();"><i class="fas fa-undo"></i></button>
+                    <img id="img" width="400" height="auto" class="border border-dark"></img>
+                    <button onclick="clock();"><i class="fas fa-redo-alt"></i></button>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="slidecontainer m-2">
+                    <div class="col-6">
+                        <label for="brightness">Brightness:</label>
+                        <input type="range" min="-1" max=1 value=0.3 step=0.1 class="slider" id="brightness" onchange="edit()" >
+                    </div>
+                    <div class="col-6">
+                        <label for="contrast">Contrast:</label>
+                        <input type="range" min="-1" max=1 value=0.8 step=0.1 class="slider" id="contrast" onchange="edit()">
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-4">
+                    <input type="radio" id="aadhar" name="select" value="aadhar">
+                    <label for="aadhar">Aadhar</label>
+                </div>
+                <div class="col-4">
+                    <input type="radio" id="pan" name="select" value="pan">
+                    <label for="pan">Pan</label>
+                </div>
+                <div class="col-4">
+                    <input type="radio" id="text" name="select" value="text">
+                    <label for="aadhar">Text</label>
+                </div>
+            </div>
+        </div>
+        <button id="submit" onclick="recognizeFile();" class="btn btn-info">Submit</button>
+        <div id="log" hidden="true"></div>
+    </div>
+
+    <script src="test.js"></script>
+    <script type="text/javascript" src="node_modules/tesseract.js/dist/tesseract.min.js"></script>
+    <script type="text/javascript" src="node_modules/jimp/browser/lib/jimp.js"></script>
+    <script type="text/javascript" src="test.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
